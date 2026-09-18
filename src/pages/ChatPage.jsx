@@ -3,34 +3,19 @@ import { useParams, Link } from 'react-router-dom'
 import { findGuideById } from '../data/categories'
 import './ChatPage.css'
 
-const OPENAI_URL = 'https://api.openai.com/v1/chat/completions'
-const MODEL = 'gpt-4o-mini'
-
-async function askOpenAI(messages) {
-  const apiKey = import.meta.env.VITE_OPENAI_API_KEY
-  if (!apiKey) {
-    throw new Error('Missing VITE_OPENAI_API_KEY in .env')
-  }
-
-  const res = await fetch(OPENAI_URL, {
+async function askChat(messages) {
+  const res = await fetch('/api/chat', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      messages,
-      temperature: 0.7,
-    }),
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ messages }),
   })
 
   const data = await res.json()
   if (!res.ok) {
-    throw new Error(data?.error?.message || `OpenAI error (${res.status})`)
+    throw new Error(data?.error || `Chat error (${res.status})`)
   }
 
-  return data.choices?.[0]?.message?.content?.trim() || ''
+  return data.content?.trim() || ''
 }
 
 export default function ChatPage() {
@@ -81,7 +66,7 @@ export default function ChatPage() {
     setError('')
 
     try {
-      const reply = await askOpenAI([
+      const reply = await askChat([
         { role: 'system', content: systemPrompt },
         ...history.map(({ role, content }) => ({ role, content })),
       ])

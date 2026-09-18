@@ -1,0 +1,657 @@
+:root {
+  --main-color: #eef4ff;
+  --main-background: #2D3358;
+  --main-color-disabled: #516C7E;
+  --head-chat-color: #97C9D9;
+  --user-chat-color: #8B56C8;
+  --timestamp-color: #BCB9E1;
+  --main-font-family: "futura-pt-book", sans-serif;
+}
+@media only screen and (max-width: 600px), (orientation: portrait) {
+    .unith-controls.svelte-components-VideoLayout-VideoControlElements {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+.unith-disclaimer
+{
+  display: none !important;
+}
+@media screen and (min-width: 280px)
+{
+  .unith-controls.svelte-components-InputContainer
+  {
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    -webkit-border-radius: 2em;
+       -moz-border-radius: 2em;
+            border-radius: 2em;
+  }
+  .unith-controls-parent.svelte-components-VideoLayout-VideoControlElements {
+    bottom: 10%;
+  }
+  button#full-screen-button.svelte-components-Controls
+  {
+      display: -webkit-box !important;
+      display: -webkit-flex !important;
+      display: -moz-box !important;
+      display: -ms-flexbox !important;
+      display: flex !important;
+  }
+  .unith-message-container.svelte-components-MessageBubble
+  {
+    color:var(--head-chat-color);
+  }
+  .unith-input-container.unith-disabled.svelte-components-InputContainer
+  {
+   background: rgb(var(--background)) !important;
+  }
+  .unith-video-container-container.svelte-components-VideoLayout-VideoPlayer {
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -moz-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
+  }
+  .unith-subtitles-top.svelte-components-Subtitles
+  {
+    position: absolute;
+  }
+  .unith-msg.svelte-components-Subtitles
+  {
+    position: absolute;
+    bottom: 22vh;
+  }
+  #talking-head
+  {
+    margin-top: 0;
+    height: 77vh;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;
+  }
+  .unith-header-container.svelte-components-Chat
+  {
+    display: none;
+  }
+  .footer{
+    display: none;
+  }
+  .unith-video.svelte-Container
+  {
+    background: none;
+  }
+  .unith-video-header.svelte-components-VideoMixerPlaceholder,
+  .unith-video-bottom.svelte-components-VideoMixerPlaceholder
+  {
+    display: none;
+  }
+  .unith-mute.svelte-components-Controls
+  {
+    color: #fff;
+    background: rgb(var(--background)) none;
+  }
+  .unith-container.svelte-components-MessageBubble.bkd>div
+  {
+    margin-left: 0 !important;
+  }
+  .unith-suggestion-title-container.svelte-components-SuggestionContainer.svelte-components-SuggestionContainer
+  {
+    padding: 8px;
+    line-height: 1.5em;
+    text-align: center;
+    display: block;
+    color: rgb(var(--body));
+    background-color: var(--user-chat-color);
+  }
+  .unith-hide-chat-controls.svelte-components-InputContainer
+  {
+    position: absolute;
+    top: -71px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .unith-suggestion.svelte-components-SuggestionContainer.svelte-components-SuggestionContainer
+  {
+    padding: 5px;
+  }
+  .unith-suggestion.svelte-components-SuggestionContainer.svelte-components-SuggestionContainer>p.svelte-components-SuggestionContainer
+  {
+    text-align: center;
+    margin: auto;
+  }
+  .unith-input-button.svelte-components-InputContainer:disabled, .unith-input-button.svelte-components-InputContainer
+  {
+        background-color: var(--main-color-disabled);
+  }
+  .unith-input-button.svelte-components-InputContainer:hover
+  {
+    background-color: var(--main-color);
+  }
+  .unith-rectangle.svelte-components-VideoMixerPlaceholder
+  {
+    display: none;
+  }
+  .unith-chat.svelte-App
+  {
+    background:
+    var(--main-background);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin-top:0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+  }
+  .unith-hoverable.unith-bkd.svelte-components-MessageBubble:hover
+  {
+    color: var(--main-color-disabled);
+  }
+  button.svelte-components-Controls:hover
+  {
+    color: var(--main-color);
+
+  }
+  .unith-msg-text.unith-usr.svelte-components-MessageBubble
+  {
+    background-color:var(--user-chat-color);
+    font-weight: 500;
+    font-family: var(--main-font-family);
+    line-height: 1.2;
+    color: #fff;
+  }
+  .unith-suggestion.unith-selectable.svelte-components-SuggestionContainer.svelte-components-SuggestionContainer:hover
+  {
+    color: var(--main-color);
+  }
+  .unith-suggestion-wrapper.svelte-components-SuggestionContainer
+  {
+    padding-bottom: 10px;
+  }
+  .unith-suggestion.svelte-components-SuggestionContainer.svelte-components-SuggestionContainer
+  {
+    font-weight: 400;
+    font-size: small;
+    background: white;
+    text-align: center;
+    scroll-snap-align: center;
+    margin: auto;
+    margin-top: 10px;
+    -webkit-box-shadow: 4px 4px 7px rgb(0 0 0 / 5%);
+    -moz-box-shadow: 4px 4px 7px rgb(0 0 0 / 5%);
+    box-shadow: 4px 4px 7px rgb(0 0 0 / 5%);
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#97C9D9), to(#97C9D9));
+    background: -webkit-linear-gradient(#97C9D9 0%, #97C9D9 100%);
+    background: -moz-linear-gradient(#97C9D9 0%, #97C9D9 100%);
+    background: -o-linear-gradient(#97C9D9 0%, #97C9D9 100%);
+    background: linear-gradient(#97C9D9 0%, #97C9D9 100%);
+    -webkit-box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
+    -moz-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
+    text-transform: uppercase;
+    font-size: 15px;
+    width: 90%;
+    font-weight: 600;
+    text-align: center;
+    color: #2D3358;
+    border-bottom: none;
+  }
+  .unith-touch-icon.svelte-components-VideoMixerPlaceholder {
+    width: 5em;
+    height: 5em;
+    background-repeat: no-repeat;
+    -webkit-mask: url(/th/click.svg);
+    mask: url(/th/click.svg);
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: var(--main-color);
+    -webkit-animation: pulse 3s infinite;
+       -moz-animation: pulse 3s infinite;
+            -o-animation: pulse 3s infinite;
+       animation: pulse 3s infinite;
+
+  }
+  @-webkit-keyframes pulse {
+    0% {
+      background-color: #fff;
+      -webkit-transform: scale(1.4);
+              transform: scale(1.4);
+
+    }
+    50% {
+      background-color: var(--main-color);
+      -webkit-transform: scale(1);
+              transform: scale(1);
+
+    }
+    100% {
+      background-color: #fff;
+      -webkit-transform: scale(1.4);
+              transform: scale(1.4);
+
+    }
+  }
+  @-moz-keyframes pulse {
+    0% {
+      background-color: #fff;
+      -moz-transform: scale(1.4);
+           transform: scale(1.4);
+
+    }
+    50% {
+      background-color: var(--main-color);
+      -moz-transform: scale(1);
+           transform: scale(1);
+
+    }
+    100% {
+      background-color: #fff;
+      -moz-transform: scale(1.4);
+           transform: scale(1.4);
+
+    }
+  }
+  @-o-keyframes pulse {
+    0% {
+      background-color: #fff;
+      -webkit-transform: scale(1.4);
+         -moz-transform: scale(1.4);
+           -o-transform: scale(1.4);
+              transform: scale(1.4);
+
+    }
+    50% {
+      background-color: var(--main-color);
+      -webkit-transform: scale(1);
+         -moz-transform: scale(1);
+           -o-transform: scale(1);
+              transform: scale(1);
+
+    }
+    100% {
+      background-color: #fff;
+      -webkit-transform: scale(1.4);
+         -moz-transform: scale(1.4);
+           -o-transform: scale(1.4);
+              transform: scale(1.4);
+
+    }
+  }
+  @keyframes pulse {
+    0% {
+      background-color: #fff;
+      -webkit-transform: scale(1.4);
+         -moz-transform: scale(1.4);
+           -o-transform: scale(1.4);
+              transform: scale(1.4);
+
+    }
+    50% {
+      background-color: var(--main-color);
+      -webkit-transform: scale(1);
+         -moz-transform: scale(1);
+           -o-transform: scale(1);
+              transform: scale(1);
+
+    }
+    100% {
+      background-color: #fff;
+      -webkit-transform: scale(1.4);
+         -moz-transform: scale(1.4);
+           -o-transform: scale(1.4);
+              transform: scale(1.4);
+
+    }
+  }
+  #talking-head.on-top-of
+  {
+    position: fixed;
+    left: 0;
+    right:0;
+    margin: auto;
+    height: 92vh;
+    top: 0;
+    z-index: 9999999999999999999999;
+  }
+  .on-top-of .unith-subtitle-button.svelte-components-VideoMixerPlaceholder
+  {
+    position: absolute;
+    right: 19px;
+    top: 150px;
+    margin: auto;
+  }
+  .on-top-of .unith-full-screen-button.svelte-components-VideoMixerPlaceholder
+  {
+    position: absolute;
+    right: 15px;
+    top: 95px;
+    margin: auto;
+  }
+  .title_book_talking,.uppertitle_talking
+  {
+    display:none;
+  }
+  video.svelte-components-VideoMixer1-VideoPlayer,video.svelte-components-VideoMixer1-VideoPlayerIdle
+  {
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: 100%;
+  }
+  .unith-video-container.svelte-components-VideoMixerPlaceholder {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  button.svelte-components-Controls, .unith-full-screen-button.svelte-components-VideoMixerPlaceholder{
+    -webkit-border-radius: 100px;
+       -moz-border-radius: 100px;
+            border-radius: 100px;
+  }
+  .unith-container.unith-bkd.svelte-components-MessageBubble
+  {
+    margin: auto;
+    padding: 0;
+  }
+  .unith-msg-text.svelte-components-MessageBubble
+  {
+    max-width: 100%;
+  }
+  .unith-msg-text.unith-bkd.svelte-components-MessageBubble
+  {
+    background-color: var(--head-chat-color);
+    font-weight: 500;
+    font-family: var(--main-font-family);
+    line-height: 1.2;
+  }
+  .unith-timestamp.unith-bkd.svelte-components-MessageBubble
+  {
+    color: var( --timestamp-color);
+    font-size: 10px;
+    font-weight: 300;
+    font-style: italic;
+    font-family: var(--main-font-family);
+  }
+  .unith-rectangle.svelte-components-VideoLayout-VideoPlayer,.unith-video-header.svelte-components-VideoLayout-VideoHeader,.unith-video-bottom.svelte-components-VideoLayout-VideoFooter,
+  .unith-up.unith-displaced.svelte-components-UserFeedbackThumbsUpDown,.unith-down.svelte-components-UserFeedbackThumbsUpDown,.unith-subtitle-button.svelte-components-VideoLayout-VideoControlElements
+  {
+    display: none;
+  }
+  .unith-outline.svelte-components-VideoLayout-Videos-TalkingVideo,video.svelte-components-VideoLayout-Videos-IdleVideo
+  {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
+  }
+  .unith-gradient.svelte-components-TouchToStart {
+    position: absolute;
+  }
+  .unith-call-to-action.svelte-assets-CallToAction.svelte-assets-CallToAction {
+      position: absolute;
+  }
+  #paragraphs.svelte-assets-CallToAction.svelte-assets-CallToAction{
+    display: none;
+  }
+
+  #paragraphs.svelte-assets-CallToAction::after
+  {
+    content: "hello";
+    display:block;
+    visibility: visible;
+  }
+  button.svelte-assets-CallToAction.svelte-assets-CallToAction {
+    visibility: hidden; /* Hides the original button content */
+    position: relative; /* Ensures that the ::after element is positioned correctly */
+  }
+
+  button.svelte-assets-CallToAction.svelte-assets-CallToAction::after {
+    content: "Start"; /* Your custom text */
+    visibility: visible; /* Makes the new content visible */
+    position: absolute; /* Ensures the new content appears in the right spot */
+    top: 50%; /* Adjust positioning as needed */
+    left: 50%; /* Adjust positioning as needed */
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+         -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); /* Center the content */
+            background-color:inherit;
+      -webkit-border-radius: inherit;
+         -moz-border-radius: inherit;
+              border-radius: inherit;
+      -webkit-box-shadow: inherit;
+         -moz-box-shadow: inherit;
+              box-shadow: inherit;
+      color: inherit;
+      font-size: inherit;
+      font-family:inherit;
+      font-weight:inherit;
+      padding: inherit;
+      min-width: inherit;
+      -webkit-flex-shrink: inherit;
+          -ms-flex-negative: inherit;
+              flex-shrink: inherit;
+      border:inherit;
+      text-transform: capitalize;
+  }
+ .unith-info-bar.svelte-components-InputContainer.svelte-components-InputContainer
+  {
+    display: none;
+  }
+  .unith-index.svelte-components-SuggestionContainer.svelte-components-SuggestionContainer
+  {
+    display: none;
+  }
+  .unith-chat.svelte-Container.svelte-Container
+  {
+    background:var(--main-background);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin-top:0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+    position: relative;
+  }
+  .unith-suggestion-container.svelte-components-SuggestionContainer.svelte-components-SuggestionContainer
+  {
+    background-color:var(--main-color);
+    -webkit-border-radius: 0.7em 0.7em 0 0;
+    -moz-border-radius: 0.7em 0.7em 0 0;
+    border-radius: 0.7em 0.7em 0 0;
+    display: none !important;
+  }
+  .unith-suggestion-wrapper.svelte-components-SuggestionContainer
+  {
+        margin: 10px auto 20px auto;
+  }
+  .unith-msg-text.unith-bkd.svelte-components-MessageBubble
+  {
+    background-color:  var(--main-color);
+    font-weight: 500;
+    font-family: var(--main-font-family);
+    line-height: 1.2;
+    padding: 0.3em 1.2em;
+    -webkit-border-radius: 0 20px 20px 20px;
+    -moz-border-radius: 0 20px 20px 20px;
+    border-radius: 0 20px 20px 20px;
+    text-align: left;
+    color: var(--main-background);
+  }
+  span.unith-timestamp.svelte-components-ReactiveTimestamp,.unith-msg-text.svelte-components-MessageInfo
+  {
+    color: var( --timestamp-color);
+    font-size: 10px;
+    font-weight: 300;
+    font-style: italic;
+    font-family: var(--main-font-family);
+    line-height: 1.2;
+    text-transform: capitalize;
+  }
+  .unith-disabled.svelte-components-AudioInput .unith-input-button.svelte-components-AudioInput
+  {
+    -webkit-border-radius: initial;
+    -moz-border-radius: initial;
+    border-radius: initial;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-animation: none !important;
+       -moz-animation: none !important;
+         -o-animation: none !important;
+            animation: none !important;
+  }
+  .unith-user-input.svelte-components-InputContainer.svelte-components-InputContainer
+  {
+   background: none;
+  }
+  .unith-msgs-container.svelte-components-Chat
+  {
+    -webkit-box-flex: 8;
+    -webkit-flex: 8 8 80%;
+    -moz-box-flex: 8;
+    -ms-flex: 8 8 80%;
+    flex: 8 8 80%;
+    scroll-behavior: auto;
+    overflow-y: auto;
+    width: 100%;
+    height: auto;
+  }
+  .unith-msgs-container.svelte-components-Chat
+  {
+    display: block;
+  }
+  .unith-caret.svelte-components-SuggestionContainer
+  {
+    display: none;
+  }
+  .unith-suggestion-title.svelte-components-SuggestionContainer
+  {
+    display:block;
+  }
+  .unith-msgs-container.svelte-components-Chat> .unith-msgs
+  {
+    height: 0;
+    width: inherit;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1em;
+    height: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 1em;
+  }
+  .unith-msgs.svelte-components-Chat
+  {
+    height: 0;
+    width: inherit;
+  }
+  .unith-toggle-chat-button
+  {
+    display: none !important;
+  }
+  .unith-is-full-screen-video.svelte-components-VideoLayout-VideoPlayer
+  {
+    position: inherit;
+  }
+  .unith-msgs-container.unith-hide-component
+  {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 800px)
+{
+  #talking-head.unith-on-top-of
+  {
+    height: 100vh;
+  }
+  .title_book_talking,.uppertitle_talking
+  {
+    display:block;
+  }
+  #talking-head
+  {
+    margin-top: 30px;
+    height: 70vh;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  video.svelte-components-VideoMixer1-VideoPlayer,video.svelte-components-VideoMixer1-VideoPlayerIdle
+  {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: inherit;
+  }
+  .svelte-Container.unith-position-absolute-chat
+  {
+    position: absolute;
+    left:0 !important;
+    right: 0 !important;
+    margin: auto !important;
+    bottom: 10vh;
+  }
+  .unith-suggestion.svelte-components-SuggestionContainer.svelte-components-SuggestionContainer
+  {
+    padding: 15px;
+  }
+
+}
+@media screen and (min-width: 1320px)
+
+{
+      .unith-chat.svelte-Container.svelte-Container
+  {
+    margin-left: 15px;
+    -webkit-border-radius: 1em;
+       -moz-border-radius: 1em;
+            border-radius: 1em;
+  }
+}
